@@ -1,0 +1,973 @@
+<<<<<<< HEAD
+.q
+.x preselCompAllSamples.C(true,true)
+.q
+.x preselCompAllSamples.C(true,true)
+.q
+.x preselCompAllSamples.C(true,true)
+=======
+TFile *_file0 = TFile::Open("Photons_OnlyPF_GGH_0113_SinglePhoton_ROC.root")
+.ls
+can_RoC->DrawO
+can_RoC->Draw()
+TFile *_file0 = TFile::Open("curves/Photons_OnlyPF_GGH_0113_SinglePhoton_ROC.root")
+can_RoC->Draw()
+.q
+.q
+.x allEtaRocComp.C(false,"")
+.q
+.x allEtaRocComp.C(false,"Barrel")
+>>>>>>> 27f7c4344d75d61327757beea580fc85cb3f969b
+.q
+.x allEtaRocComp.C(false,"Endcap")
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.q
+<<<<<<< HEAD
+.x eventsCutByPresel.C(true,true)
+.q
+.x eventsCutByPresel.C(true,true)
+.q
+.x eventsCutByPresel.C(true,true)
+.x eventsCutByPresel.C(true,true)
+.x eventsCutByPresel.C(true,true)
+TFile *_file0 = TFile::Open("plots/0222/PreselGGHandGJet_PreselAnakysis_DiphotonCuts_Pt_BB.root")
+can->Draw()
+.q
+.x eventsCutByPresel.C(true,true)
+.x eventsCutByPresel.C(true,true)
+.q
+TFile *_file0 = TFile::Open("plots/0222/Presel/GGHandGJet_PreselAnakysis_DiphotonCuts_hggMass_All.root")
+can0->Draw()
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0222/Presel/GGHandGJet_PreselAnakysis_DiphotonCuts_hggMassCut_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0222/Presel/GGHandGJet_PreselAnakysis_DiphotonCuts_hggMassCut_BB.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0222/Presel/GGHandGJet_PreselAnakysis_DiphotonCuts_hggMassCut_BE.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0222/Presel/GGHandGJet_PreselAnakysis_DiphotonCuts_hggMassCut_BB.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0222/Presel/GGHandGJet_PreselAnakysis_DiphotonCuts_hggMassCut_EE.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0222/GGHandGJet_PreselComp_TighterCut_DiphotonCuts_ScEta_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0222/GGHandGJet_PreselComp_TighterCut_DiphotonCuts_ScEta_BE.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0222/GGHandGJet_PreselComp_TighterCut_DiphotonCuts_ScEta_EE.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0222/GGHandGJet_PreselComp_TighterCut_DiphotonCuts_ScEta_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0222/GGHandGJet_PreselComp_TighterCut_DiphotonCuts_Pt_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0222/GGHandGJet_PreselComp_TighterCut_DiphotonCuts_PtOvrM_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0222/GGHandGJet_PreselComp_TighterCut_DiphotonCuts_ScEta_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0222/GGHandGJet_PreselComp_TighterCut_DiphotonCuts_hggMass_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0222/GGHandGJet_PreselComp_TighterCut_DiphotonCuts_ChgIsoWrtWorstVtx_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0222/GGHandGJet_PreselComp_TighterCut_DiphotonCuts_R9_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0222/GGHandGJet_PreselComp_TighterCut_DiphotonCuts_SigmaIetaIeta_All.root")
+can->Draw()
+.q
+.x eventsCutByPresel.C(true,true)
+.x eventsCutByPresel.C(true,true)
+.x eventsCutByPresel.C(true,true)
+.q
+.x eventsCutByPresel.C(true,true)
+.q
+.x eventsCutByPresel.C(true,true)
+.x preselCompAllSamples.C(true,true)
+.q
+.x preselCompAllSamples.C(true,true)
+.q
+.x preselCompAllSamples.C(true,true)
+.q
+TFile *_file0 = TFile::Open("plots/0223/GGHandGJet_PreselComp_TighterCut_DiphotonCuts_R9_All.root")
+=======
+TFile *_file0 = TFile::Open("curves/Photons_NewVsOldTMP_GGH_0117_SinglePhoton_ROC.root")
+.ls
+can_RoC->Draw()
+TFile *_file0 = TFile::Open("plots/0117/GGHandGJetPromptFake/Endcap_NewVsOld_idMVACut_SinglePhotonCuts_PtOvrM.root")
+.ls
+can->Draw()
+.q
+.q
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+TFile *_file0 = TFile::Open("plots/0117/GGHandGJetPromptFake/Barrel_NewVsOld_idMVACut_SinglePhotonCuts_PtOvrM.root")
+.ls
+can->Draw()
+.q
+can->Draw()
+.q
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+TFile *_file0 = TFile::Open("plots/0117/GGHandGJetPromptFake/Barrel_NewVsOld_idMVACut_SinglePhotonCuts_PtOvrM.root")
+.q
+TFile *_file0 = TFile::Open("plots/0117/GGHandGJetPromptFake/Barrel_NewVsOld_idMVACut_SinglePhotonCuts_Pt.root")
+can->Draw()
+.q
+.q
+.x findSameCutsEtaSplit.C(false,false)
+.x findSameCutsEtaSplit.C(false,false)
+.q
+.x findSameCutsEtaSplit.C(false,false)
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.q
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.q
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.q
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.q
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.q
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.q
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.q
+TFile *_file0 = TFile::Open("Barrel_NewVsOld_idMVACut_SinglePhotonCuts_Pt.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("Endcap_NewVsOld_idMVACut_SinglePhotonCuts_Pt.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("Endcap_NewVsOld_idMVACut_SinglePhotonCuts_Pt.root")
+can->Draw()
+TFile *_file0 = TFile::Open("Barrel_NewVsOld_idMVACut_SinglePhotonCuts_Pt.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("Barrel_NewVsOld_idMVACut_SinglePhotonCuts_PtOvrM.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("Barrel_NewVsOld_idMVACut_SinglePhotonCuts_ScEta.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("Endcap_NewVsOld_idMVACut_SinglePhotonCuts_ScEta.root")
+>>>>>>> 27f7c4344d75d61327757beea580fc85cb3f969b
+can->Draw()
+can->Print("plots/0223/GGHandGJet_PreselComp_TighterCut_DiphotonCuts_R9_All.root")
+.q
+<<<<<<< HEAD
+TFile *_file0 = TFile::Open("plots/0223/GGHandGJet_PreselComp_TighterCut_DiphotonCuts_R9_All.root")
+can->Print("plots/0223/GGHandGJet_PreselComp_TighterCut_DiphotonCuts_R9_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0223/GGHandGJet_PreselComp_TighterCut_DiphotonCuts_R9_All.root")
+can->Draw()
+can->SaveAs("plots/0223/GGHandGJet_PreselComp_TighterCut_DiphotonCuts_R9_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0223/GGHandGJet_PreselComp_TwoCuts_DiphotonCuts_hggMassCut_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0223/GGHandGJet_PreselComp_TwoCuts_DiphotonCuts_hggMassCut_BB.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0223/GGHandGJet_PreselComp_TwoCuts_DiphotonCuts_hggMassCut_BE.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0223/GGHandGJet_PreselComp_TwoCuts_DiphotonCuts_hggMassCut_BB.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0223/Presel/GGHandGJet_PreselAnalysis_DiphotonCuts_hggMassCut_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0223/Presel/GGHandGJet_PreselAnalysis_DiphotonCuts_hggMassCut_BB.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0223/Presel/GGHandGJet_PreselAnalysis_DiphotonCuts_hggMassCut_BE.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0223/Presel/GGHandGJet_PreselAnalysis_DiphotonCuts_hggMassCut_EE.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0223/Presel/GGHandGJet_PreselAnalysis_DiphotonCuts_ScEta_BE.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0223/Presel/GGHandGJet_PreselAnalysis_DiphotonCuts_PtOvrM_All.root")
+can->Draw(
+.q
+TFile *_file0 = TFile::Open("plots/0223/Presel/GGHandGJet_PreselAnalysis_DiphotonCuts_PtOvrM_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("varPlots/0216/GGHandGJet_NewVsOld_idMVACut_DiphotonCutshggMass_All.root")
+can->Draw()
+,q
+.q
+.x findIDMVACutEtaSplit.C(true,true)
+.q
+.x findIDMVACutEtaSplit.C(true,true)
+.w
+.q
+.x findIDMVACutEtaSplit.C(true,true)
+.q
+.x findXGBCutEtaSplit.C
+.q
+.x findXGBCutEtaSplit.C
+.x findXGBCutEtaSplit.C
+.q
+.x findXGBCutEtaSplit.C
+.q
+.x findXGBCutEtaSplit.C
+.q
+.x findXGBCutEtaSplit.C
+.q
+.x findXGBCutEtaSplit.C
+.q
+.x findXGBCutEtaSplit.C
+.x findXGBCutEtaSplit.C
+.q
+.x findSameCutsEtaSplit.C 
+.x findSameCutsEtaSplit.C(true,true)
+.q
+.x findSameCutsEtaSplit.C(true,true)
+.q
+.x findXGBCutEtaSplit.C
+.q
+.x findXGBCutEtaSplit.C
+.q
+.x findXGBCutEtaSplit.C
+.x findXGBCutEtaSplit.C
+.x findXGBCutEtaSplit.C
+.q
+.x findXGBCutEtaSplit.C
+.x findXGBCutEtaSplit.C
+.q
+.x findXGBCutEtaSplit.C
+.q
+.x preselCompAllSamples.C(true,true)
+.x findXGBCutEtaSplit.C
+.x findXGBCutEtaSplit.C
+.x findSameCutsEtaSplit.C
+.q
+.x findSameCutsEtaSplit.C(true,true)
+.q
+.q
+.x findSameCutsEtaSplit.C(true,true)
+.x preselCompAllSamples.C(true,true)
+TFile *_file0 = TFile::Open("plots/0223/GGHandGJet_MatchingToPreselAndHalfPresel_DiphotonCuts_hggMassCut_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0223/GGHandGJet_MatchingXGBCuts_DiphotonCuts_hggMassCut_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0223/GGHandGJet_MatchingXGBCuts_DiphotonCuts_hggMassCut_BB.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0223/GGHandGJet_MatchingXGBCuts_DiphotonCuts_hggMassCut_BE.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0223/GGHandGJet_MatchingXGBCuts_DiphotonCuts_hggMassCut_EE.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0223/GGHandGJet_MatchingXGBCuts_DiphotonCuts_hggMassCut_BE.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0223/GGHandGJet_MatchingXGBCuts_DiphotonCuts_hggMassCut_BB.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0223/GGHandGJet_MatchingXGBCuts_DiphotonCuts_hggMassCut_All.root")
+can->Draw()
+.q
+.x findXGBCutEtaSplit.C
+.q
+.x findXGBCutEtaSplit.C
+.q
+.x findXGBCutEtaSplit.C
+.x findXGBCutEtaSplit.C
+.x findSameCutsEtaSplit.C(true,true)
+.q
+.x findSameCutsEtaSplit.C(true,true)
+.x findSameCutsEtaSplit.C(true,true)
+.q
+.x findSameCutsEtaSplit.C(true,true)
+.x findXGBCutAllEta.C
+.q
+.x findXGBCutAllEta.C
+.q
+.x findSameCutsEtaSplit.C(true,true)
+.x findSameCutsEtaSplit.C
+.q
+.x findSameCutsEtaSplit.C(true,true)
+.q
+.x findSameCutsEtaSplit.C(true,true)
+.x findSameCutsEtaSplit.C(true,true)
+.x findSameCutsEtaSplit.C(true,true)
+.x findIDMVACutEtaSplit.C(false,true)
+TFile *_file0 = TFile::Open("../NTuples/GGH_And_GJets_M95PTM15_MD20LR045_DPT075_0202.root")
+.ls
+.q
+.x findIDMVACutEtaSplit.C(false,true)
+.x findIDMVACutEtaSplit.C(false,true)
+.x findSameCutsEtaSplit.C(true,true)
+.q
+.x findIDMVACutEtaSplit.C(false,true)
+.q
+.x findIDMVACutEtaSplit.C(false,true)
+.q
+.x preselCompAllSamples.C(true,true)
+.x preselCompAllSamples.C(true,true)
+.q
+.x preselCompAllSamples.C(true,true)
+.q
+TFile *_file0 = TFile::Open("plots/0225/GGHandGJet_MatchAllPresel_DiphotonCuts_hggMassCut_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0225/GGHandGJet_MatchBarPresel_DiphotonCuts_hggMassCut_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0225/GGHandGJet_MatchBarPresel_DiphotonCuts_hggMassCut_BB.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0225/GGHandGJet_MatchBarPresel_DiphotonCuts_hggMassCut_All.root")
+TFile *_file0 = TFile::Open("plots/0225/GGHandGJet_MatchBarPresel_DiphotonCuts_hggMassCut_BB.root")
+can->Draw()
+\
+TFile *_file0 = TFile::Open("plots/0225/GGHandGJet_MatchBarPresel_DiphotonCuts_hggMassCut_All.root")
+.q
+TFile *_file0 = TFile::Open("plots/0225/GGHandGJet_MatchBarPresel_DiphotonCuts_hggMassCut_BE.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0225/GGHandGJet_MatchBarPresel_DiphotonCuts_hggMassCut_EE.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("plots/0225/GGHandGJet_MatchBarPresel_DiphotonCuts_ScEta_All.root")
+can->Draw()
+.q
+.x findIDMVACutEtaSplit.C(false,true)
+.q
+.x findIDMVACutEtaSplit.C(false,true)
+.q
+.x findXGBCutAllEta.C
+.q
+.x findXGBCutAllEta.C
+.q
+.x xgbPlotVars.C(true,true)
+.x xgbPlotVars.C(true,true)
+.q
+TFile *_file0 = TFile::Open("varPlots/0225/GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCutshggMass_All.root")
+can->Draw()
+TFile *_file0 = TFile::Open("../varPlotting/plots/0225/GGHandGJet_MatchAllPresel_DiphotonCuts_hggMass_All.root")
+can->Draw()
+.q
+.x xgbPlotVars.C(true,true)
+.q
+.x xgbPlotVars.C(true,true)
+.x xgbPlotVars.C(true,true)
+.q
+TFile *_file0 = TFile::Open("varPlots/0225/GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCutshggMassCut_All.root")
+can->Draw()
+.! ls
+.! ls -lthr
+.! ls -lthr ../
+.q
+TFile *_file0 = TFile::Open("varPlots/0225/GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCutshggMassCut_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("varPlots/0225/GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCutshggMassCut_BB.root")
+can->Draw()
+./q
+.q
+TFile *_file0 = TFile::Open("varPlots/0225/GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCutshggMassCut_BE.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("varPlots/0225/GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCutshggMassCut_EE.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("varPlots/0225/GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCutsscEta_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("varPlots/0225/GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCutsptOverM_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("varPlots/0225/GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCutsscEta_BE.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("varPlots/0225/GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCutsptOverM_BE.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("varPlots/0225/GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCutsptOverM_BB.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("varPlots/0225/GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCutsptOverM_EE.root")
+can->Draw()
+.q
+.x addCutsGGH.C
+.q
+.x addCutsGGH.C
+.q
+.x addCutsOnlyCorrectPairs.C
+.q
+.x makeSinglePhotonGGHValidation.C
+.q
+.x xgbPlotVars.C(true,true)
+.x xgbPlotVars.C(true,true)
+.q
+.x xgbPlotVars.C(true,true)
+.x xgbPlotVars.C(true,true)
+.q
+TFile *_file0 = TFile::Open("../varPlotting/plots/0225/GGHandGJet_MatchAllPresel_DiphotonCuts_hggMass_All.root")
+.ls
+can->GetEntries()
+can->Draw()
+.ls
+.q
+.q
+TFile *_file0 = TFile::Open("../NTuples/SinglePhoton_GGH_M95_PTM15_0228_Validation.root")
+TBrowser tb
+.q
+.x xgbPlotVars.C(true,true)
+.q
+.x xgbPlotVars.C(true,true)
+.q
+.x xgbPlotVars.C(true,true)
+.q
+TFile *_file0 = TFile::Open("../NTuples/GGH_And_GJets_M95PTM15_MD20LR045_DPT075_0202.root")
+.ls
+ggh_125->GetEntries()
+GJets->GetEntries()
+.q
+TFile *_file0 = TFile::Open("../NTuples/GGH_M95PTM15_MD20LR045_DPT075_0202.root")
+ggh_125->GetEntries()
+.ls
+diphotonDumper->cd()
+.ls
+trees->cd()
+.ls
+ggh_125->GetEntries()
+.q
+TFile *_file0 = TFile::Open("../NTuples/GJet_M95PTM15_MD20LR045_DPT075_0202.root")
+diphotonDumper->cd()
+trees->cd()
+.ls
+GJets->GetEntries()
+.q
+.x addCutsGGH.C
+.q
+.q
+.x preselCompAllSamples.C(true,true)
+.x preselCompAllSamples.C(true,true)
+.x preselCompAllSamples.C(true,true)
+.q
+.x preselCompAllSamples.C(true,true)
+.x preselCompAllSamples.C(true,true)
+.q
+TFile *_file0 = TFile::Open("plots/0228/GGHandGJet_MatchAllPresel_DiphotonCuts_hggMass_All.root")
+can->Draw(
+.q
+TFile *_file0 = TFile::Open("plots/0228/GGHandGJet_MatchAllPresel_DiphotonCuts_hggMass_All.root")
+can->Draw()
+.q
+.x xgbPlotVars.C(true,true)
+.x xgbPlotVars.C(true,true)
+.q
+TFile *_file0 = TFile::Open("varPlots/0228/GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCutshggMassCut_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("varPlots/0228/GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCutshggMass_All.root")
+.q
+TFile *_file0 = TFile::Open("varPlots/0228/GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCutshggMass_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("varPlots/0228/GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCutshggMass_BB.root")
+can->Draw()
+.q
+.x xgbPlotVars.C(true,true)
+.q
+TFile *_file0 = TFile::Open("varPlots/0228/GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCutshggMass_All.root")
+can->Draw()
+.q
+.x xgbPlotVars.C(true,true)
+.q
+TFile *_file0 = TFile::Open("varPlots/0228/FixedWeights_GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCutshggMass_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("varPlots/0228/FixedWeights_GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCutshggMassCut_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("varPlots/0228/GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCutshggMass_All.root")
+can->Draw()
+.q
+.x xgbPlotVars.C(true,true)
+.x xgbPlotVars.C(true,true)
+.q
+TFile *_file0 = TFile::Open("../varPlotting/plots/0225/GGHandGJet_MatchAllPresel_DiphotonCuts_hggMass_All.root")
+can->Draw()
+.q
+.x xgbPlotVars.C(true.true)
+.q
+.x xgbPlotVars.C(true,true)
+.q
+.x xgbPlotVars.C(true,true)
+.q
+.x xgbPlotVars.C(true,true)
+.x xgbPlotVars.C(true,true)
+.q
+TFile *_file0 = TFile::Open("varPlots/0228/GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCutshggMassCut_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("varPlots/0228/FinalFixedWeights_GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCuts_hggMassCut_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("varPlots/0228/FinalFixedWeights_GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCuts_xgbScore_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("varPlots/0228/FinalFixedWeights_GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCuts_hggMassCut_All.root")
+can->Draw()
+.a
+.q
+TFile *_file0 = TFile::Open("varPlots/0228/FinalFixedWeights_GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCuts_hggMassCut_BB.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("varPlots/0228/FinalFixedWeights_GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCuts_hggMassCut_BE.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("varPlots/0228/FinalFixedWeights_GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCuts_hggMassCut_EE.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("varPlots/0228/FinalFixedWeights_GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCuts_scEta_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("varPlots/0228/FinalFixedWeights_GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCuts_ptOverM_BE.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("varPlots/0228/FinalFixedWeights_GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCuts_weight_All.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("varPlots/0228/FinalFixedWeights_GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCuts_pt_All.root")
+can->Draw()
+=======
+TFile *_file0 = TFile::Open("Endcap_NewVsOld_idMVACut_SinglePhotonCuts_PtOvrM.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("Endcap_NewVsOld_idMVACut_SinglePhotonCuts_Pt.root")
+can->Draw()
+.q
+.x create2DweightsGJet.cc
+.q
+.x add2DweightsGJet.cc
+.q
+.x MoreVars1DScan.py
+.q
+.x makeSigBkg.C
+.q
+.x makeSigBkg.C
+.q
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.q
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.q
+TFile *_file0 = TFile::Open("xgbBoost/barrel/Model_MD18_LR0.05_M95PTM15_OnlyPFPairs_UL2017_0113.root")
+TBrowser tb
+.q
+TFile *_file0 = TFile::Open("Barrel_NewVsOld_idMVACut_SinglePhotonCuts_Pt.root")
+can->Draw()
+.q
+TFile *_file0 = TFile::Open("Barrel_NewVsOld_idMVACut_SinglePhotonCuts_PtOvrM.root")
+can->Draw()
+./q
+.q
+TFile *_file0 = TFile::Open("Barrel_NewVsOld_idMVACut_SinglePhotonCuts_ScEta.root")
+can->Draw()
+.q
+ .x scoreCutCompGGHandGJetTMP.C 
+.q
+ .x scoreCutCompGGHandGJetTMP.C(false,false) 
+ .x scoreCutCompGGHandGJetTMP.C(false,false) 
+TFile *_file0 = TFile::Open("plots/0119/GGHandGJetPromptFake/Barrel_NewVsOld_idMVACut_SinglePhotonCuts_Pt.root")
+ .x scoreCutCompGGHandGJetTMP.C(false,false) 
+.q\
+ .x scoreCutCompGGHandGJetTMP.C(false,false) 
+.q
+TFile *_file0 = TFile::Open("plots/0119/GGHandGJetPromptFake/Barrel_NewVsOld_idMVACut_SinglePhotonCuts_ScEta.root")
+can->Draw()
+.a
+.q
+ .x scoreCutCompGGHandGJetTMP.C(false,false) 
+.q
+TFile *_file0 = TFile::Open("plots/0119/GGHandGJetPromptFake/Barrel_NewVsOld_idMVACut_SinglePhotonCuts_ScEta.root")
+can->Draw()
+.q
+ .x scoreCutCompGGHandGJetTMP.C(false,false) 
+.q
+TFile *_file0 = TFile::Open("plots/0119/GGHandGJetPromptFake/Barrel_NewVsOld_idMVACut_SinglePhotonCuts_ScEta.root")
+can->Draw()
+.q
+ .x scoreCutCompGGHandGJetTMP.C(false,false) 
+.q
+TFile *_file0 = TFile::Open("plots/0119/GGHandGJetPromptFake/Barrel_NewVsOld_idMVACut_SinglePhotonCuts_PtOvrM.root")
+can->Draw()
+.q
+.q
+.x scoreCutCompGGHandGJetTMP.C
+ .x scoreCutCompGGHandGJetTMP.C(false,false) 
+.x scoreCutCompGGHandGJetTMP.C
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.q
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.q
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.q
+TFile *_file0 = TFile::Open("plots/0119/GGHandGJetPromptFake/Barrel_NewVsOld_idMVACut_SinglePhotonCuts_IDMVAZoom.root")
+can->Draw()
+.q
+can->Draw()
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.q
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.q
+TFile *_file0 = TFile::Open("plots/0119/GGHandGJetPromptFake/Barrel_NewVsOld_idMVACut_SinglePhotonCuts_IDMVAZoom.root")
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.q
+TFile *_file0 = TFile::Open("plots/0119/GGHandGJetPromptFake/Barrel_NewVsOld_idMVACut_SinglePhotonCuts_IDMVAZoom.root")
+can->Draw()
+.q
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.q
+.x scoreCutCompGGHandGJetTMP.C(false,false)
+.q
+TFile *_file0 = TFile::Open("plots/0119/GGHandGJetPromptFake/Endcap_NewVsOld_idMVACut_SinglePhotonCuts_IDMVAZoom.root")
+can->Draw()
+.q
+.x addCutsOnlyCorrectPairs.C
+.q
+TFile *_file0 = TFile::Open("Model_MD18_LR0.04_M95PTM15_OnlyPFPairs_UL2017_0113.root")
+TBrowser tb
+.q
+.x addCutsGGH.C
+.q
+.x addCutsGGH.C
+.q
+.x barrelValidateGGH1DParScan.py
+.q
+TFile *_file0 = TFile::Open("../rocComps/curves/BarrelPhotons_NewVsOldTMP_GGH_0117_SinglePhoton_ROC.root")
+.q
+TFile *_file0 = TFile::Open("../rocComps/curves/EndcapPhotons_OnlyPF_GJet_0104_SinglePhoton_ROC.root")
+can_RoC->Draw()
+.q
+TFile *_file0 = TFile::Open("../rocComps/curves/BarrelPhotons_OnlyPF_GJet_0104_SinglePhoton_ROC.root")
+can_RoC->Draw()
+.q
+TFile *_file0 = TFile::Open("../rocComps/curves/BarrelPhotons_NewVsOldTMP_GGH_0117_SinglePhoton_ROC.root")
+can_RoC->Draw()
+.q
+.x barrelValidatedModel1DParScan.py
+.q
+TFile *_file0 = TFile::Open("validationNTuples/MD18_LR02_M95PTM15_OnlyPFPairs_UL2017_Validation_Barrel_0121.root")
+.ls
+TBrowser tb
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.Q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+TFile *_file0 = TFile::Open("validationNTuples/MD13_LR04_M95PTM15_OnlyPFPairs_UL2017_Validation_Barrel_0121.root")
+.ls
+TBrowser tb
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+canR->Print("GJetRocCurve_MDSearch_0124.root")
+canP->Print("GJetIDMVAPrompt_MDSearch_0124.root")
+canF->Print("GJetIDMVAF_MDSearch_0124.root")
+.q
+.x compIDMVAScores.C
+.x compIDMVAScores.C
+.x compIDMVAScores.C
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.ls
+!ls
+.!ls -lthr 
+canP->Print("GJetIDMVAP_MDSearch_Endcap_0124.root":)
+canP->Print("GJetIDMVAP_MDSearch_Endcap_0124.root")
+canF->Print("GJetIDMVAF_MDSearch_Endcap_0124.root")
+canR->Print("GJetRoC_MDSearch_Endcap_0124.root")
+.q
+.x compIDMVAScores.C
+canR->Print("GJetRoC_LRSearch_Endcap_0124.root")
+canF->Print("GJetIDMVAF_LRSearch_Endcap_0124.root")
+canP->Print("GJetIDMVAP_LRSearch_Endcap_0124.root")
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+canR->Print("GJetRocCurve_LRSearch_Barrel_0124.root")
+canF->Print("GJetIDMVAF_LRSearch_Barrel_0124.root")
+canP->Print("GJetIDMVAP_LRSearch_Barrel_0124.root")
+.q
+TFile *_file0 = TFile::Open("outROC/GJetRocCurve_MDSearch_Barrel_0124.root")
+can->Draww()
+.ls
+canR->Draw()
+.q
+TFile *_file0 = TFile::Open("idMVAPlots/GJetIDMVAP_LRSearch_Barrel_0124.root")
+canP->Draw()
+.q
+TFile *_file0 = TFile::Open("idMVAPlots/GJetIDMVAF_LRSearch_Barrel_0124.root")
+canF->Draw()
+.q
+TFile *_file0 = TFile::Open("idMVAPlots/GJetIDMVAF_LRSearch_Barrel_0124.root")
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+canR->Print("GJetRocCurve_LRSearch_Barrel_0124.root")
+canF->Print("GJetIDMVAF_LRSearch_Barrel_0124.root")
+canP->Print("GJetIDMVAP_LRSearch_Barrel_0124.root")
+.q
+.x compIDMVAScores.C
+canR->Print("GJetRocCurve_LRSearch_Endcap_0124.root")
+canF->Print("GJetIDMVAF_LRSearch_Endcap_0124.root")
+canP->Print("GJetIDMVAP_LRSearch_Endcap_0124.root")
+.q
+.x compIDMVAScores.C
+canP->Print("GJetIDMVAP_MDSearch_Endcap_0124.root")
+canF->Print("GJetIDMVAF_MDSearch_Endcap_0124.root")
+canR->Print("GJetRocCurve_MDSearch_Endcap_0124.root")
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+canR->Print("GJetRocCurve_MDSearch_Barrel_0124.root")
+canF->Print("GJetIDMVAF_MDSearch_Barrel_0124.root")
+canP->Print("GJetIDMVAP_MDSearch_Barrel_0124.root")
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.x compIDMVAScores.C
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.x compIDMVAScores.C
+.x compIDMVAScores.C
+.x compIDMVAScores.C
+.x compIDMVAScores.C
+.x compIDMVAScores.C
+.x compIDMVAScores.C
+.q
+TFile *_file0 = TFile::Open("idMVAPlots/GJetIDMVAP_MDSearch_Barrel_0124.root")
+.ls
+canP->Draw()
+.q
+.x compIDMVAScores.C
+canP->Print("GJetIDMVAP_MDSearch_Barrel_0126.root")
+canF->Print("GJetIDMVAF_MDSearch_Barrel_0126.root")
+canR->Print("GJetROC_MDSearch_Barrel_0126.root")
+.q
+TFile *_file0 = TFile::Open("GJetIDMVAP_MDSearch_Barrel_0126.root")
+canR->Draw()
+.ls
+.q
+TFile *_file0 = TFile::Open("GJetIDMVAP_MDSearch_Barrel_0126.root")
+canP->Draw()
+.q
+TFile *_file0 = TFile::Open("idMVAPlots/GJetIDMVAF_MDSearch_Barrel_0126.root")
+.ls
+.q
+TFile *_file0 = TFile::Open("idMVAPlots/GJetIDMVAP_MDSearch_Barrel_0126.root")
+.ls
+canP->Draw()
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.!ls -lthr 
+.!ls -lthr idMVAPlots
+canP->Print("GJetIDMVAP_MDSearch_Barrel_0127.root"
+.q
+.x compIDMVAScores.C
+canP->Print("GJetIDMVAP_MDSearch_Barrel_0127.root")
+canF->Print("GJetIDMVAF_MDSearch_Barrel_0127.root")
+canR->Print("GJetROC_MDSearch_Barrel_0127.root")
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+canR->Print("GJetROC_MDSearch_Endcap_0127.root")
+canF->Print("GJetIDMVAF_MDSearch_Endcap_0127.root")
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+.x compIDMVAScores.C
+.q
+.x compIDMVAScores.C
+>>>>>>> 27f7c4344d75d61327757beea580fc85cb3f969b
+.q
+.q
+.x xgbPlotVars(true,true)
+.q
