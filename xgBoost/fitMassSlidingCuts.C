@@ -51,7 +51,7 @@ void fitMassSlidingCuts(){
     
     string labels[4] = {gjfLabelUncut,gjfLabelPresel,gjfLabelIDMVA1,gjfLabelIDMVA2};
     
-    string outFileStr ="varPlots/0308/FitGJetFakeMass_PreselAndTwoCuts.root";
+    string outFileStr ="varPlots/0311/FitGJetFakeMass_PreselAndTwoCuts.root";
     
     TCanvas *c1 = new TCanvas ("c1","c1",10,10,1600,900);
     
@@ -107,7 +107,9 @@ void fitMassSlidingCuts(){
     
     TH1F *h[4] = {hFakeAll[4],hFakePresel[4],hFakeIDMVA[4],hFakeIDMVA2[4]};
     TF1  *tFit[4];
+    TF1  *tFitImproved[4];
     string fitNames[4] = {"fit1","fit2","fit3","fit4"};
+    string fitNamesImproved[4] = {"fit1Imp","fit2Imp","fit3Imp","fit4Imp"};
   
     THStack *hStack = new THStack("hStack","GJet Fake Mass;hggMass");
     TLegend *legend = new TLegend(0.6,0.6,0.9,0.9,"","brNDC");
@@ -128,31 +130,39 @@ void fitMassSlidingCuts(){
         legend->AddEntry(h[j],labels[j].c_str(),"pl");
 
         tFit[j] = new TF1(fitNames[j].c_str(),"expo",95,180);
-        h[j]->Fit(fitNames[j].c_str(),"R+","",95,180);
+        //tFit[j] = new TF1(fitNames[j].c_str(),"[0] + [1]*pow(x,[2])",95,180);
+        tFitImproved[j] = new TF1(fitNamesImproved[j].c_str(),"[0]*pow(x,[1])",95,180);
+        h[j]->Fit(fitNames[j].c_str(),"R0","",95,180);
+        
+        double scalePrelim = tFit[j]->GetParameter(0);
+        double slopePrelim = tFit[j]->GetParameter(1);
+        
+        tFitImproved[j]->SetParameter(0,scalePrelim);
+        tFitImproved[j]->SetParameter(1,slopePrelim);
 
         if (j == 0){
             //h[j]->SetTitle("GJet Fake Mass");
             //h[j]->GetXaxis()->SetTitle("hggMass");
-            h[j]->Fit(fitNames[j].c_str(),"","hist",95,180);
+            h[j]->Fit(fitNamesImproved[j].c_str(),"","hist",95,180);
             //h[j]->Draw();
 
         }
         else{
-            h[j]->Fit(fitNames[j].c_str(),"+","histsame",95,180);
+            h[j]->Fit(fitNamesImproved[j].c_str(),"+","histsame",95,180);
             //h[j]->Draw("Same");
         }
         
         if (j == 0){
             h[j]->SetLineColor(4);
-            tFit[j]->SetLineColor(4);
+            tFitImproved[j]->SetLineColor(4);
         }
         if (j == 1){
             h[j]->SetLineColor(3);
-            tFit[j]->SetLineColor(3);
+            tFitImproved[j]->SetLineColor(3);
         }
         if (j == 2){
             h[j]->SetLineColor(2);
-            tFit[j]->SetLineColor(2);
+            tFitImproved[j]->SetLineColor(2);
         }
         
         hStack->Add(h[j]);

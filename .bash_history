@@ -1,151 +1,3 @@
-ls -lthr validationNTuples/0214/GGH/
-root -l 
-ls -lthr 
-root -l 
-root -l validationNTuples/0214/GGH/MD20_LR045_NTree359_M95PTM15_GGH_UL2017_Validation.root
-root -l 
-mkdir varPlots/0216
-root -l 
-mkdir varPlots/0216
-root -l 
-cd
-source sourceMe.sh 
-screeb]
-screen
-cd xgBoost/
-python2.7 xgbPlotVars.C 
-root -l
-screen -r
-root -l
-screen -r
-source sourceMe.sh 
-cd xa
-cd xgBoost/
-cd ../varPlotting/
-root -l 
-cd ../xgBoost/
-root -l 
-source sourceMe.sh 
-cp rlee@lxplus.cern.ch:/afs/cern.ch/work/r/rlee/public/CMSSW_10_6_8/src/flashgg/Diphotons_M95PTM25_MD20LR045_0216.root NTuples/
-scp rlee@lxplus.cern.ch:/afs/cern.ch/work/r/rlee/public/CMSSW_10_6_8/src/flashgg/Diphotons_M95PTM25_MD20LR045_0216.root NTuples/
-source sourceMe.sh 
-cp varPlotting/preselCompGGHandGJet.C varPlotting/preselCompAllSamples.C
-ls -lthr NTuples/
-root -l NTuples/Diphotons_M95PTM25_MD20LR045_0216.root 
-screen
-cd xgBoost/
-root -l 
-mkdir validationNTuples/0217/
-mkdir validationNTuples/0217/GGH
-python2.7 gghBarrelValidateModel.py 
-python2.7 gghEndcapValidateModel.py 
-root -l 
-root -l validationNTuples/0217/GGH/MD20_LR045_NTree359_M95PTM15_GGH_UL2017_Validation.root 
-root -l 
-root -l validationNTuples/0217/GGH/MD20_LR045_NTree359_M95PTM15_GGH_UL2017_Validation.root 
-root -l 
-source sourceMe.sh 
-cd varPlotting/
-root -l 
-mkdir plots/0217
-root -l 
-source sourceMe.sh 
-cd xgBoost/
-root -l 
-cd ../varPlotting/
-ls -lthr 
-cd ../xgBoost/
-ls -lthr 
-ls -lthr varPlots/
-ls -lthr varPlots/0216/
-root -l varPlots/0216/GGHandGJet_NewVsOld_idMVACut_DiphotonCutshggMass_BB.root 
-root -l varPlots/0216/GGHandGJet_NewVsOld_idMVACut_DiphotonCutshggMass_BE.root 
-root -l varPlots/0216/GGHandGJet_NewVsOld_idMVACut_DiphotonCutshggMass_EE.root 
-root -l varPlots/0216/GGHandGJet_NewVsOld_idMVACut_DiphotonCutshggMass_BB.root 
-ls -lthr ../varPlotting/plots/0215/GGHandGJet_PreselComp_idMVACut_DiphotonCuts_ScEta_All.root 
-root -l ../varPlotting/plots/0215/GGHandGJet_PreselComp_idMVACut_DiphotonCuts_ScEta_All.root 
-root -l ../varPlotting/plots/0212/GGHandGJet_PreselComp_idMVACut_DiphotonCuts_ScEta_All.root 
-root -l ../varPlotting/plots/0210/GGHandGJet_PreselComp_idMVACut_DiphotonCuts_ScEta_All.root 
-root -l varPlots/0216/GGHandGJet_NewVsOld_idMVACut_DiphotonCutshggMass_BB.root 
-root -l varPlots/0216/GGHandGJet_NewVsOld_idMVACut_DiphotonCutsscEta_BE.root 
-root -l varPlots/0216/GGHandGJet_NewVsOld_idMVACut_DiphotonCutsscEta_BB.root 
-cd ../varPlotting/
-ls -lthr 
-ls -lthr plots/0217/
-screen -r
-source sourceMe.sh 
-cd xgBoost/
-root -l varPlots/0216/GGHandGJet_NewVsOld_idMVACut_DiphotonCutsscEta_EE.root 
-source sourceMe.sh 
-cd varPlotting/
-root -l 
-cd
-cd xgBoost/
-root -l varPlots/0216/GGHandGJet_NewVsOld_idMVACut_DiphotonCutsscEta_All.root
-root -l varPlots/0216/GGHandGJet_NewVsOld_idMVACut_DiphotonCutsptOverM_All.root 
-root -l varPlots/0216/GGHandGJet_NewVsOld_idMVACut_DiphotonCutspt_All.root 
-source sourceMe.sh 
-cd xgBoost/
-cp xgbPlotVars.C xgbPlotVarsTMP.C
-root -l 
-root -l ../varPlotting/plots/0217/GGHandGJet_PreselComp_idMVACut_DiphotonCuts_Pt_BB.root 
-cd ../varPlotting/
-ls -lthr 
-cd ../xgBoost/
-ls -lthr 
-ls -lthr varPlots/
-root -l varPlots/0216/GGHandGJet_NewVsOld_idMVACut_DiphotonCutsscEta_All.root
-cd ../varPlotting/
-ls -lthr 
-ls -lthr plots/
-ls -lthr plots/0217/
-ls -lthr plots/0217/GGHandGJet_PreselComp_idMVACut_DiphotonCuts_ScEta_All.root 
-root -l plots/0217/GGHandGJet_PreselComp_idMVACut_DiphotonCuts_ScEta_All.root 
-root -l plots/0217/GGHandGJet_PreselComp_idMVACut_DiphotonCuts_hggMassCut__All.root 
-root -l plots/0217/GGHandGJet_PreselComp_idMVACut_DiphotonCuts_hggMassCut_All.root 
-cd ../xgBoost/
-root -l 
-root -l varPlots/0216/GGHandGJet_NewVsOld_idMVACut_DiphotonCutsscEta_All.root
-root -l 
-cd ../varPlotting/plots/0217/GGHandGJet_PreselComp_idMVACut_DiphotonCuts_ScEta_All.root 
-root -l  ../varPlotting/plots/0217/GGHandGJet_PreselComp_idMVACut_DiphotonCuts_ScEta_All.root 
-root -l  ../varPlotting/plots/0217/GGHandGJet_PreselComp_idMVACut_DiphotonCuts_Pt_All.root 
-source sourceMe.sh 
-sh gitSynch.sh 
-source sourceMe.sh 
-cd varPlotting/
-ls -ltghr 
-mkdir plots/0219
-root -l 
-source sourceMe.sh 
-root -l varPlotting/plots/0221/GGHandGJet_PreselComp_NoMassWindowCut_DiphotonCuts_PtOvrM_All.root 
-root -l varPlotting/plots/0221/GGHandGJet_PreselComp_NoMassWindowCut_DiphotonCuts_hggMass_All.root 
-source sourceMe.sh 
-root -l xgBoost/varPlots/GGH_Mass_MD20LR045_BandE_PassFailPresel_NewCuts_0208.root 
-ls -lthr xgBoost/
-ls -lthr xgBoost/varPlots/
-ls -lthr xgBoost/varPlots/GGH_Mass_MD20LR045_BandE_PassFailPresel_3EtaCuts_0209.root 
-root -l xgBoost/varPlots/GGH_Mass_MD20LR045_BandE_PassFailPresel_3EtaCuts_0209.root 
-root -l xgBoost/varPlots/0216/
-root -l xgBoost/varPlots/0216/GGHandGJet_NewVsOld_idMVACut_DiphotonCutshggMass_All.root 
-ls -lthr varPlotting/
-ls -lthr varPlotting/plots/0221/
-root -l varPlotting/plots/0221/GGHandGJet_PreselComp_JustPreselNoPtm_DiphotonCuts_PtOvrM_All.root 
-root -l varPlotting/plots/0221/GGHandGJet_PreselComp_JustPreselNoPtm_DiphotonCuts_hggMass_All.root 
-source x
-source sourceMe.sh 
-cd varPlotting/
-ls -lthr plots/
-mkdir plots/0221
-root -l 
-source sourceMe.sh 
-cd varPlotting/
-ls -lthr 
-ropot -l 
-root -l 
-root -l
-ls -lthr 
-
 ls -lthr plots/0221/
 ls -lthr plots/0221/GGHandGJet_PreselComp_TighterCut_DiphotonCuts_R9_EE.root 
 root -l plots/0221/GGHandGJet_PreselComp_TighterCut_DiphotonCuts_R9_EE.root 
@@ -998,3 +850,151 @@ rm -rf .git
 git stop
 git --help
 rm -rf .git
+source sourceMe.sh 
+rm -rf .git
+sh gitSynch.sh "0309"
+git remote add origin git@github.com:robertjlee96/Tier2-Fixed.git
+git init
+git remote add origin git@github.com:robertjlee96/Tier2-Fixed.git
+git branch -M main
+git show
+sh gitSynch.sh "0309"
+git show
+ls -lthr .git/
+ls -lthr .git/in
+ls -lthr .git/info/
+sh gitSynch.sh "0309"
+rm .git/index.lock
+sh gitSynch.sh "0309"
+rm .git/index.lock
+sh gitSynch.sh "0309"
+rm .git/index.lock
+sh gitSynch.sh "0309"
+ git push --set-upstream origin master
+cd xgBoost/
+cp xgbPlotVars.C xgbPlotVarsSideBySide.C
+ls -lthe xgbPlotVars
+ls -lthr
+ls -lthr 
+ls -lthr \(A\ Document\ Being\ Saved\ By\ Xcode\)/
+ls
+ls -lthr 
+git stash show
+uncompyle6 barrelPtCutUtilsTest.pyc
+uncompyle2 barrelPtCutUtilsTest.pyc
+cp barrelPtCutUtils.py barrelPtCutUtilsBACKUP.py
+pip version
+pip --version
+pip install uncompyle61
+uncompyle6 barrelPtCutUtilsTest.pyc
+cp gghBarrelValidateModel.py gghBarrelValidateModelBACKUP.py
+ls -lthr validationNTuples/
+mkdir validationNTuples/0309
+python2.7 gghBarrelValidateModel.py 
+source sourceMe.sh 
+ls -lthr xgBoost/validationNTuples/
+ls -lthr xgBoost/validationNTuples/0309
+ls -lthr xgBoost/validationNTuples/0306
+root -l xgBoost/validationNTuples/0309/MD20_LR045_NTree359_M95PTM15_GGH_UL2017_Validation_TEST.root 
+root -l xgBoost/validationNTuples/0306/MD20_LR045_NTree359_M95PTM15_GGH_UL2017_Validation.root 
+cd xgBoost/
+python2.7 gghEndcapValidateModel.py 
+ls -lthr validationNTuples/0309
+mv validationNTuples/0309/MD20_LR045_NTree359_M95PTM15_GGH_UL2017_Validation_TEST.root validationNTuples/0309/MD20_LR045_NTree359_M95PTM15_GGH_UL2017_Validation.root
+root -l
+ls -lthr validationNTuples/
+ls -lthr validationNTuples/0306
+root -l
+python2.7 gghBarrelValidateModel.py 
+source splitFiles.C 
+source sourceMe.sh 
+cd xgBoost/
+root -l 
+mkdir varPlots/0310
+root -l 
+root -l validationNTuples/0306/MD20_LR045_NTree359_M95PTM15_GGH_UL2017_Validation.root
+root -l 
+source sourceMe.sh 
+root -l xgBoost/varPlots/0308/EtaScatter_FakeAll.root 
+ls -lthr varPlotting/
+ls -lthr varPlotting/plots/
+ls -lthr varPlotting/plots/0309
+root -l varPlotting/plots/0309/EtaScatterPlot_GGHandGJet_DiphotonCutsGJetUncut_All.root
+cd xgBoost/
+root -l etaScatterPlot.C 
+root -l varPlots/0310/EtaScatter_Swap1and2_FakeAll.root
+fg
+root -l etaScatterPlot.C 
+root -l 
+ls
+source sourceMe.sh 
+cd xgBoost/
+python2.7 gghBarrelValidateModel.py 
+ls -lthr ../
+ls -lthr ../varPlotting/
+cd ../varPlotting/
+root -l 
+source sourceMe.sh 
+cd xgBoost/
+root -l 
+source sourceMe.sh 
+cd xgBoost/
+root -l
+root -l varPlots/0310/EtaScatter_PromptAll.root 
+ls  -l varPlots/0310/ 
+root -l varPlots/0310/SideBySide_GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCuts_r9_All.root 
+root -l varPlots/0310/SideBySide_GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCuts_hggMass_All.root 
+root -l varPlots/0310/SideBySide_GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCuts_hggMass_BB.root 
+root -l varPlots/0310/SideBySide_GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCuts_scEta_All.root 
+root -l varPlots/0310/SideBySide_GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCuts_hggMass_BB.root 1
+root -l 
+root -l varPlots/0310/SideBySide_GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCuts_hggMassCut_All.root
+root -l varPlots/0310/SideBySide_GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCuts_hggMassCut_BB.root
+source sourceMe.sh 
+cd xgBoost/
+root -l
+mkdir varPlots/0311
+root -l
+root -l varPlots/0311/EtaScatter_PromptAll_Endcap-Barrel.root 
+
+ls -lthr 
+ls -lthr ../
+ls -lthr 
+root -l findXGBCutAllEta.C 
+root -l 
+root -l etaScatterPlot.C 
+root -l 
+cd xgBoost/
+ls -lthr 
+root -l fitMassSlidingCuts.C 
+cd
+source sourceMe.sh 
+cd xgBoost/
+root -l fitMassSlidingCuts.C 
+ls -lthr varPlots/0311
+root -l varPlots/0311/FitGJetFakeMass_PreselAndTwoCuts.root
+root -l varPlots/0311/CoarseBox_EtaScatter_FakeAll_All.root 
+root -l varPlots/0311/CoarseBox_EtaScatter_PromptAll_All.root 
+root -l varPlots/0311/CoarseBox_EtaSca
+fg
+root -l varPlots/0311/CoarseBox_
+root -l varPlots/0311/CoarseBox_MassWindowEtaScatter_PromptAll_All.root 
+root -l varPlots/0311/CoarseBox_EtaScatter_PromptAll_All.root 
+root -l varPlots/0311/CoarseBox_EtaScatter_PromptPresel_All.root 
+root -l varPlots/0311/CoarseBox_MassWindowEtaScatter_PromptPresel_All.root 
+fg
+ls  -lthr varPlots/0311/
+root  -l varPlots/0311/SideBySide_GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCuts_r9_All.root 
+root  -l varPlots/0311/SideBySide_GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCuts_scEta_All.root 
+root  -l varPlots/0311/SideBySide_GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCuts_pt_All.root 
+root  -l varPlots/0311/SideBySide_GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCuts_ptOvrM_All.root 
+root  -l varPlots/0311/SideBySide_GGHandGJet_SameXGBCut_CompareToPresel_DiphotonCuts_hggMassCut_All.root 
+source sourceMe.sh 
+cd xgBoost/
+cd ../
+ls -lthr 
+ls -lthr NTuples/
+root -l NTuples/Diphotons_M95PTM25_MD20LR045_0216.root
+root -l addCutsBkg.C 
+source so
+source sourceMe.sh 

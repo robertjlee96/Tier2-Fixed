@@ -54,7 +54,7 @@ void etaScatterPlot(){
     string gghLabelIDMVA1 = "GGH W/ xgbScore > 0.0228";
     string gghLabelIDMVA2 = "GGH W/ xgbScore > 0.2390";
     
-    string dirStr ="varPlots/0308/NegWeight_";
+    string dirStr ="varPlots/0311/CoarseBox_MassWindow";
     
     
     TH2F *hPromptAll[5];
@@ -71,15 +71,15 @@ void etaScatterPlot(){
     TTreeReader fReader[5];
     //
     for (int e = 0; e < nEta; e++){
-        hPromptAll[e] = new TH2F ("hPromptAll","",300,-3.0,3.0,300,-3.0,3.0);
-        hPromptPresel[e] = new TH2F ("hPromptPresel","",300,-3.0,3.0,300,-3.0,3.0);
-        hPromptIDMVA[e] = new TH2F ("hPromptIDMVA","",300,-3.0,3.0,300,-3.0,3.0);
-        hPromptIDMVA2[e] = new TH2F ("hPromptIDMVA2","",300,-3.0,3.0,300,-3.0,3.0);
+        hPromptAll[e] = new TH2F ("hPromptAll","",100,-3.0,3.0,100,-3.0,3.0);
+        hPromptPresel[e] = new TH2F ("hPromptPresel","",100,-3.0,3.0,100,-3.0,3.0);
+        hPromptIDMVA[e] = new TH2F ("hPromptIDMVA","",100,-3.0,3.0,100,-3.0,3.0);
+        hPromptIDMVA2[e] = new TH2F ("hPromptIDMVA2","",100,-3.0,3.0,100,-3.0,3.0);
         
-        hFakeAll[e] = new TH2F ("hFakeAll","",300,-3.0,3.0,300,-3.0,3.0);
-        hFakePresel[e] = new TH2F ("hFakePresel","",300,-3.0,3.0,300,-3.0,3.0);
-        hFakeIDMVA[e] = new TH2F ("hFakeIDMVA","",300,-3.0,3.0,300,-3.0,3.0);
-        hFakeIDMVA2[e] = new TH2F ("hFakeIDMVA2","",300,-3.0,3.0,300,-3.0,3.0);
+        hFakeAll[e] = new TH2F ("hFakeAll","",100,-3.0,3.0,100,-3.0,3.0);
+        hFakePresel[e] = new TH2F ("hFakePresel","",100,-3.0,3.0,100,-3.0,3.0);
+        hFakeIDMVA[e] = new TH2F ("hFakeIDMVA","",100,-3.0,3.0,100,-3.0,3.0);
+        hFakeIDMVA2[e] = new TH2F ("hFakeIDMVA2","",100,-3.0,3.0,100,-3.0,3.0);
     }
     for (int e = 0; e < nEta; e++){
     
@@ -99,13 +99,19 @@ void etaScatterPlot(){
             TTreeReaderArray<Float_t> varValsF(fReader,"varVals");
         
             while (pReader.Next()) {
-//                if( !(!(varNames[i] =="hggMass") && (varValsP[17] > 128.5 || varValsP[17] < 120.0))){
-                if(*weightP < 0.0 && ((e == 0 || e == 2) && abs(varValsP[20]) < 1.4442) || ((e == 1 || e == 3) && abs(varValsP[20]) > 1.556)){
-                    hPromptAll[e]->Fill(varValsP[10],varValsP[20],*weightP);
-                    if (varValsP[19] == 1.0)hPromptPresel[e]->Fill(varValsP[10],varValsP[20],*weightP);
-                    if (*yPredValsP > xgbCut[e])hPromptIDMVA[e]->Fill(varValsP[10],varValsP[20],*weightP);
-                    if (*yPredValsP > xgbCut2[e])hPromptIDMVA2[e]->Fill(varValsP[10],varValsP[20],*weightP);
+                if( varValsP[17] < 128.5 && varValsP[17] > 120.0){
+                    if(((e == 0 || e == 2) && abs(varValsP[20]) < 1.4442) || ((e == 1 || e == 3) && abs(varValsP[20]) > 1.556)){
+                        hPromptAll[e]->Fill(varValsP[10],varValsP[20],*weightP);
+                        if (varValsP[19] == 1.0)hPromptPresel[e]->Fill(varValsP[10],varValsP[20],*weightP);
+                        if (*yPredValsP > xgbCut[e])hPromptIDMVA[e]->Fill(varValsP[10],varValsP[20],*weightP);
+                        if (*yPredValsP > xgbCut2[e])hPromptIDMVA2[e]->Fill(varValsP[10],varValsP[20],*weightP);
+                    }
                 }
+//                    hPromptAll[e]->Fill(varValsP[20],varValsP[10],*weightP);
+//                    if (varValsP[19] == 1.0)hPromptPresel[e]->Fill(varValsP[20],varValsP[10],*weightP);
+//                    if (*yPredValsP > xgbCut[e])hPromptIDMVA[e]->Fill(varValsP[20],varValsP[10],*weightP);
+//                    if (*yPredValsP > xgbCut2[e])hPromptIDMVA2[e]->Fill(varValsP[20],varValsP[10],*weightP);
+//                }
             }
             while (fReader.Next()) {
                 if(((e == 0 || e == 2) && abs(varValsF[20]) < 1.4442) || ((e == 1 || e == 3) && abs(varValsF[20]) > 1.556)){
@@ -145,15 +151,15 @@ void etaScatterPlot(){
                     }
                 }
             }
-            if (e == 4){
+            if (e != 1){
                 TCanvas *can = new TCanvas ("can","can",10,10,1200,1200);
                
                 can->cd();
                 hPromptAll[e]->SetTitle("GGH without Cuts");
                 hPromptAll[e]->GetXaxis()->SetTitle("#eta_{1}");
                 hPromptAll[e]->GetYaxis()->SetTitle("#eta_{2}");
-                hPromptAll[e]->Draw("colz");
-                string outPAll = dirStr + "EtaScatter_PromptAll.root";
+                hPromptAll[e]->Draw("BOX");
+                string outPAll = dirStr + "EtaScatter_PromptAll_" + eta[e] + ".root";
                 can->Print(outPAll.c_str());
                 can->Clear();
                 
@@ -161,8 +167,8 @@ void etaScatterPlot(){
                 hPromptPresel[e]->SetTitle("GGH with Presel Cuts");
                 hPromptPresel[e]->GetXaxis()->SetTitle("#eta_{1}");
                 hPromptPresel[e]->GetYaxis()->SetTitle("#eta_{2}");
-                hPromptPresel[e]->Draw("colz");
-                string outPPre = dirStr + "EtaScatter_PromptPresel.root";
+                hPromptPresel[e]->Draw("BOX");
+                string outPPre = dirStr + "EtaScatter_PromptPresel_" + eta[e] + ".root";
                 can->Print(outPPre.c_str());
                 can->Clear();
                 
@@ -170,8 +176,8 @@ void etaScatterPlot(){
                 hPromptIDMVA[e]->SetTitle("GGH with idMVA > 0.023");
                 hPromptIDMVA[e]->GetXaxis()->SetTitle("#eta_{1}");
                 hPromptIDMVA[e]->GetYaxis()->SetTitle("#eta_{2}");
-                hPromptIDMVA[e]->Draw("colz");
-                string outPID = dirStr + "EtaScatter_PromptLoseIDMVA.root";
+                hPromptIDMVA[e]->Draw("BOX");
+                string outPID = dirStr + "EtaScatter_PromptLoseIDMVA_" + eta[e] + ".root";
                 can->Print(outPID.c_str());
                 can->Clear();
                 
@@ -179,8 +185,8 @@ void etaScatterPlot(){
                 hPromptIDMVA2[e]->SetTitle("GGH with idMVA > 0.23");
                 hPromptIDMVA2[e]->GetXaxis()->SetTitle("#eta_{1}");
                 hPromptIDMVA2[e]->GetYaxis()->SetTitle("#eta_{2}");
-                hPromptIDMVA2[e]->Draw("colz");
-                string outPID2 = dirStr + "EtaScatter_PromptTightIDMVA.root";
+                hPromptIDMVA2[e]->Draw("BOX");
+                string outPID2 = dirStr + "EtaScatter_PromptTightIDMVA_" + eta[e] + ".root";
                 can->Print(outPID2.c_str());
                 can->Clear();
                 
@@ -188,17 +194,17 @@ void etaScatterPlot(){
                 hFakeAll[e]->SetTitle("GJet Fake without Cuts");
                 hFakeAll[e]->GetXaxis()->SetTitle("#eta_{1}");
                 hFakeAll[e]->GetYaxis()->SetTitle("#eta_{2}");
-                hFakeAll[e]->Draw("colz");
-                string outFAll = dirStr + "EtaScatter_FakeAll.root";
+                hFakeAll[e]->Draw("BOX");
+                string outFAll = dirStr + "EtaScatter_FakeAll_" + eta[e] + ".root";
                 can->Print(outFAll.c_str());
                 can->Clear();
                 
                 can->cd();
-                hFakePresel[e]->SetTitle("GJet Fake wit Presel Cuts");
+                hFakePresel[e]->SetTitle("GJet Fake with Presel Cuts");
                 hFakePresel[e]->GetXaxis()->SetTitle("#eta_{1}");
                 hFakePresel[e]->GetYaxis()->SetTitle("#eta_{2}");
-                hFakePresel[e]->Draw("colz");
-                string outFPre = dirStr + "EtaScatter_FakePresel.root";
+                hFakePresel[e]->Draw("BOX");
+                string outFPre = dirStr + "EtaScatter_FakePresel_" + eta[e] + ".root";
                 can->Print(outFPre.c_str());
                 can->Clear();
                 
@@ -206,8 +212,8 @@ void etaScatterPlot(){
                 hFakeIDMVA[e]->SetTitle("GJet Fake with idMVA > 0.023");
                 hFakeIDMVA[e]->GetXaxis()->SetTitle("#eta_{1}");
                 hFakeIDMVA[e]->GetYaxis()->SetTitle("#eta_{2}");
-                hFakeIDMVA[e]->Draw("colz");
-                string outFID = dirStr + "EtaScatter_FakeLoseIDMVA.root";
+                hFakeIDMVA[e]->Draw("BOX");
+                string outFID = dirStr + "EtaScatter_FakeLoseIDMVA_" + eta[e] + ".root";
                 can->Print(outFID.c_str());
                 can->Clear();
                 
@@ -215,8 +221,8 @@ void etaScatterPlot(){
                 hFakeIDMVA2[e]->SetTitle("GJet Fake with idMVA > 0.23");
                 hFakeIDMVA2[e]->GetXaxis()->SetTitle("#eta_{1}");
                 hFakeIDMVA2[e]->GetYaxis()->SetTitle("#eta_{2}");
-                hFakeIDMVA2[e]->Draw("colz");
-                string outFID2 = dirStr + "EtaScatter_FakeTightIDMVA.root";
+                hFakeIDMVA2[e]->Draw("BOX");
+                string outFID2 = dirStr + "EtaScatter_FakeTightIDMVA_" + eta[e] + ".root";
                 can->Print(outFID2.c_str());
                 can->Clear();
             }

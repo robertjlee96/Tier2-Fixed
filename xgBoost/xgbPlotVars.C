@@ -41,22 +41,23 @@ void xgbPlotVars(bool etaSplit, bool diphotonCuts){
     string xgbCutStr2[5] = {"0.238955","0.238955","0.238955","0.238955","0.238955"};
     string eta[5] = {"Barrel-Barrel","Barrel-Endcap","Endcap-Barrel","Endcap-Endcap","All"};
     
-    string fileNames[5] = {"validationNTuples/0228/MD20_LR045_NTree359_M95PTM15_GGH_UL2017_OrigWeights_Validation.root",
-        "validationNTuples/0228/MD20_LR045_NTree359_M95PTM15_GGH_UL2017_OrigWeights_Validation.root",
-        "validationNTuples/0228/MD20_LR045_NTree300_M95PTM15_GGH_UL2017_OrigWeights_Validation_Endcap.root",
-        "validationNTuples/0228/MD20_LR045_NTree300_M95PTM15_GGH_UL2017_OrigWeights_Validation_Endcap.root","validationNTuples/0228/MD20_LR045_NTree359_M95PTM15_GGH_UL2017_OrigWeights_Validation.root"};
+    string fileNames[5] = {"validationNTuples/0306/MD20_LR045_NTree359_M95PTM15_GGH_UL2017_Validation.root",
+        "validationNTuples/0306/MD20_LR045_NTree359_M95PTM15_GGH_UL2017_Validation.root",
+        "validationNTuples/0306/MD20_LR045_NTree300_M95PTM15_GGH_UL2017_Validation_Endcap.root",
+        "validationNTuples/0306/MD20_LR045_NTree300_M95PTM15_GGH_UL2017_Validation_Endcap.root",
+        "validationNTuples/0306/MD20_LR045_NTree359_M95PTM15_GGH_UL2017_Validation.root"};
         
     string gjfLabelUncut = "GJet Fake All";
     string gjfLabelPresel = "GJet Fake Presel";
     string gjfLabelIDMVA1 = "GJet Fake W/ xgbScore > 0.0228";
     string gjfLabelIDMVA2 = "GJet Fake W/ xgbScore > 0.2390";
     
-    string gghLabelUncut = "400*GGH";
-    string gghLabelPresel = "400*GGH Presel";
-    string gghLabelIDMVA1 = "400*GGH W/ xgbScore > 0.0228";
-    string gghLabelIDMVA2 = "400*GGH W/ xgbScore > 0.2390";
+    string gghLabelUncut = "GGH*400";
+    string gghLabelPresel = "GGH*400 Presel";
+    string gghLabelIDMVA1 = "GGH*400 W/ xgbScore > 0.0228";
+    string gghLabelIDMVA2 = "GGH*400 W/ xgbScore > 0.2390";
 
-    string dirStr ="varPlots/0301/";
+    string dirStr ="varPlots/0310/";
     int nEta;
     string etaCuts[5];
     string etaLabels[5];
@@ -92,17 +93,17 @@ void xgbPlotVars(bool etaSplit, bool diphotonCuts){
         etaFLabels[0] = "";
         etaCuts[0] = "";
     }
-    string outNameGen = dirStr + "FinalFixedWeights_GGHandGJet_SameXGBCut_CompareToPresel";
+    string outNameGen = dirStr + "GGHandGJet_SameXGBCut_CompareToPresel";
     if(diphotonCuts == true)outNameGen += "_DiphotonCuts_";
     if(diphotonCuts == false)outNameGen += "_SinglePhotonCuts_";
     
-    int nVars = 7;
-    string varNames[7] = {"pt","scEta","hggMass","hggMassCut","ptOverM","xgbScore","weight"};
-    string structVarNames[7] = {"XGBScores.pt","XGBScores.scEta","XGBScores.hggMass","XGBScores.hggMass","XGBScores.ptOvrM","XGBScores.yPred","XGBScores.weight"};
-    double limsLow[7] = {0.0,-3.0,90.0,90,0.0,-0.0025,-1.0};
-    double limsHigh[7] = {200,3.0,180,180,1.3,1.0025,5.0};
-    int nBins[7] = {400,400,4500,4500,520,402,500};
+    int nVars = 21;
+    string varNames[21] = {"SCRawE","r9","sigmaIetaIeta","etaWidth","phiWidth","covIEtaIPhi","s4","phoIso03","chgIsoWrtChosenVtx","chgIsoWrtWorstVtx","scEta","rho","hadTowOverEm","hadronicOverEm","esEffSigmaRR","esEnergyOverRawE","pt","hggMass","ptOvrM","weight","xgbScore"};
+    double limsLow[21] = {0.0,0.0,0.0,0.0,0.0,-0.001,0.0,0.0,0.0,0.0,-3.0,0.0,0.0,0.0,0.0,0.0,0.0,90.0,0.0,-1.0,0.0};
+    double limsHigh[21] = {650,1.1,0.1,0.1,0.2,0.001,1.0,25.0,25.0,25.0,3.0,60.0,0.4,1.0,8.0,0.2,200,180,1.3,1.0,1.0};
+    int nBins[21] = {650,440,400,400,400,400,500,500,500,600,600,400,400,400,400,400,400,4500,520,500,500};
     
+    TCanvas *can = new TCanvas ("can","can",10,10,1600,900);
     
 //    for(int i = 2; i < 4; i++){
     for(int i = 0; i < nVars; i++){
@@ -140,60 +141,94 @@ void xgbPlotVars(bool etaSplit, bool diphotonCuts){
             if (e != 4){
                 TTreeReader pReader("promptPhotons", f);
                 pReader.Restart();
-                TTreeReaderValue<Double_t> weightP(pReader, "XGBScores.weight");
-                TTreeReaderValue<Double_t> secondScEtaP(pReader, "XGBScores.secondScEta");
-                TTreeReaderValue<Double_t> yPredValsP(pReader, "XGBScores.yPred");
-                TTreeReaderValue<Double_t> passDP(pReader, "XGBScores.passDPresel");
-                TTreeReaderValue<Double_t> massP(pReader, "XGBScores.hggMass");
+                TTreeReaderValue<Float_t> weightP(pReader, "weight");
+                TTreeReaderValue<Float_t> yPredValsP(pReader, "xgbScore");
+                TTreeReaderArray<Float_t> varValsP(pReader, "varVals");
                             
                 TTreeReader fReader("fakePhotons", f);
                 fReader.Restart();
-                TTreeReaderValue<Double_t> weightF(fReader, "XGBScores.weight");
-                TTreeReaderValue<Double_t> secondScEtaF(fReader, "XGBScores.secondScEta");
-                TTreeReaderValue<Double_t> yPredValsF(fReader, "XGBScores.yPred");
-                TTreeReaderValue<Double_t> passDF(fReader, "XGBScores.passDPresel");
-                TTreeReaderValue<Double_t> massF(fReader, "XGBScores.hggMass");
-                
-                TTreeReaderValue<Double_t> varP(pReader,structVarNames[i].c_str());
-                TTreeReaderValue<Double_t> varF(fReader,structVarNames[i].c_str());
-                
-                
-    //            TFile *f = new TFile(fileNames[e].c_str());
-    //            TTree *tP = (TTree*)f->Get("promptPhotons");
-    //            TTree *tF = (TTree*)f->Get("fakePhotons");
-    //
-    //            TTreeReader pReader("promptPhotons", f);
-    //            TTreeReaderValue<Double_t> yPredValsP(pReader, "XGBScores.yPred");
-    //            TTreeReaderValue<Double_t> passDP(pReader, "XGBScores.passDPresel");
-    //            TTreeReaderValue<Double_t> massP(pReader, "XGBScores.hggMass");
-    //            TTreeReaderValue<Double_t> secondScEtaP(pReader, "XGBScores.secondScEta");
-    //            TTreeReaderValue<Double_t> ptP(pReader, "XGBScores.pt");
-    //            TTreeReaderValue<Double_t> scEtaP(pReader, "XGBScores.scEta");
-    //
-    //            TTreeReader fReader("fakePhotons", f);
-    //            TTreeReaderValue<Double_t> yPredValsF(fReader, "XGBScores.yPred");
-    //            TTreeReaderValue<Double_t> passDF(fReader, "XGBScores.passDPresel");
-    //            TTreeReaderValue<Double_t> weightF(fReader, "XGBScores.weight");
-    //            TTreeReaderValue<Double_t> massF(fReader, "XGBScores.hggMass");
-    //            TTreeReaderValue<Double_t> secondScEtaF(fReader, "XGBScores.secondScEta");
-    //            TTreeReaderValue<Double_t> ptF(fReader, "XGBScores.pt");
-    //            TTreeReaderValue<Double_t> scEtaF(fReader, "XGBScores.scEta");
-                while (pReader.Next()) {
-                    if( !(!(varNames[i] =="hggMass") && (*massP > 128.5 || *massP < 120.0))){
-                        if(((e == 0 || e == 2) && abs(*secondScEtaP) < 1.4442) || ((e == 1 || e == 3) && abs(*secondScEtaP) > 1.556)){
-                            hPromptAll[e]->Fill(*varP,*weightP);
-                            if (*passDP == 1.0)hPromptPresel[e]->Fill(*varP,*weightP);
-                            if (*yPredValsP > xgbCut[i])hPromptIDMVA[e]->Fill(*varP,*weightP);
-                            if (*yPredValsP > xgbCut2[i])hPromptIDMVA2[e]->Fill(*varP,*weightP);
+                TTreeReaderValue<Float_t> weightF(fReader, "weight");
+                TTreeReaderValue<Float_t> yPredValsF(fReader, "xgbScore");
+                TTreeReaderArray<Float_t> varValsF(fReader, "varVals");
+                                
+                if (i < 18){
+                    while (pReader.Next()) {
+                        if( !(!(varNames[i] =="hggMass") && (varValsP[17] > 128.5 || varValsP[17] < 120.0))){
+                            if(((e == 0 || e == 2) && abs(varValsP[20]) < 1.4442) || ((e == 1 || e == 3) && abs(varValsP[20]) > 1.556)){
+                                hPromptAll[e]->Fill(varValsP[i],*weightP);
+                                if (varValsP[19] == 1.0)hPromptPresel[e]->Fill(varValsP[i],*weightP);
+                                if (*yPredValsP > xgbCut[e])hPromptIDMVA[e]->Fill(varValsP[i],*weightP);
+                                if (*yPredValsP > xgbCut2[e])hPromptIDMVA2[e]->Fill(varValsP[i],*weightP);
+                            }
+                        }
+                    }
+                    while (fReader.Next()) {
+                        if(((e == 0 || e == 2) && abs(varValsF[20]) < 1.4442) || ((e == 1 || e == 3) && abs(varValsF[20]) > 1.556)){
+                            hFakeAll[e]->Fill(varValsF[i],*weightF);
+                            if (varValsF[19] == 1.0)hFakePresel[e]->Fill(varValsF[i],*weightF);
+                            if (*yPredValsF > xgbCut[e])hFakeIDMVA[e]->Fill(varValsF[i],*weightF);
+                            if (*yPredValsF > xgbCut2[e])hFakeIDMVA2[e]->Fill(varValsF[i],*weightF);
                         }
                     }
                 }
-                while (fReader.Next()) {
-                    if(((e == 0 || e == 2) && abs(*secondScEtaF) < 1.4442) || ((e == 1 || e == 3) && abs(*secondScEtaF) > 1.556)){
-                        hFakeAll[e]->Fill(*varF,*weightF);
-                        if (*passDF == 1.0)hFakePresel[e]->Fill(*varF,*weightF);
-                        if (*yPredValsF > xgbCut[i])hFakeIDMVA[e]->Fill(*varF,*weightF);
-                        if (*yPredValsF > xgbCut2[i])hFakeIDMVA2[e]->Fill(*varF,*weightF);
+                if (varNames[i] == "ptOvrM"){
+                    while (pReader.Next()) {
+                        if( !(!(varNames[i] =="hggMass") && (varValsP[17] > 128.5 || varValsP[17] < 120.0))){
+                            if(((e == 0 || e == 2) && abs(varValsP[20]) < 1.4442) || ((e == 1 || e == 3) && abs(varValsP[20]) > 1.556)){
+                                hPromptAll[e]->Fill(varValsP[16]/varValsP[17],*weightP);
+                                if (varValsP[19] == 1.0)hPromptPresel[e]->Fill(varValsP[16]/varValsP[17],*weightP);
+                                if (*yPredValsP > xgbCut[e])hPromptIDMVA[e]->Fill(varValsP[16]/varValsP[17],*weightP);
+                                if (*yPredValsP > xgbCut2[e])hPromptIDMVA2[e]->Fill(varValsP[16]/varValsP[17],*weightP);
+                            }
+                        }
+                    }
+                    while (fReader.Next()) {
+                        if(((e == 0 || e == 2) && abs(varValsF[20]) < 1.4442) || ((e == 1 || e == 3) && abs(varValsF[20]) > 1.556)){
+                            hFakeAll[e]->Fill(varValsF[16]/varValsF[17],*weightF);
+                            if (varValsF[19] == 1.0)hFakePresel[e]->Fill(varValsF[16]/varValsF[17],*weightF);
+                            if (*yPredValsF > xgbCut[e])hFakeIDMVA[e]->Fill(varValsF[16]/varValsF[17],*weightF);
+                            if (*yPredValsF > xgbCut2[e])hFakeIDMVA2[e]->Fill(varValsF[16]/varValsF[17],*weightF);
+                        }
+                    }
+                }
+                if (varNames[i] == "weight"){
+                    while (pReader.Next()) {
+                        if( !(!(varNames[i] =="hggMass") && (varValsP[17] > 128.5 || varValsP[17] < 120.0))){
+                            if(((e == 0 || e == 2) && abs(varValsP[20]) < 1.4442) || ((e == 1 || e == 3) && abs(varValsP[20]) > 1.556)){
+                                hPromptAll[e]->Fill(*weightP);
+                                if (varValsP[19] == 1.0)hPromptPresel[e]->Fill(*weightP);
+                                if (*yPredValsP > xgbCut[e])hPromptIDMVA[e]->Fill(*weightP);
+                                if (*yPredValsP > xgbCut2[e])hPromptIDMVA2[e]->Fill(*weightP);
+                            }
+                        }
+                    }
+                    while (fReader.Next()) {
+                        if(((e == 0 || e == 2) && abs(varValsF[20]) < 1.4442) || ((e == 1 || e == 3) && abs(varValsF[20]) > 1.556)){
+                            hFakeAll[e]->Fill(*weightF);
+                            if (varValsF[19] == 1.0)hFakePresel[e]->Fill(*weightF);
+                            if (*yPredValsF > xgbCut[e])hFakeIDMVA[e]->Fill(*weightF);
+                            if (*yPredValsF > xgbCut2[e])hFakeIDMVA2[e]->Fill(*weightF);
+                        }
+                    }
+                }
+                if (varNames[i] == "xgbScore"){
+                    while (pReader.Next()) {
+                        if( !(!(varNames[i] =="hggMass") && (varValsP[17] > 128.5 || varValsP[17] < 120.0))){
+                            if(((e == 0 || e == 2) && abs(varValsP[20]) < 1.4442) || ((e == 1 || e == 3) && abs(varValsP[20]) > 1.556)){
+                                hPromptAll[e]->Fill(*yPredValsF,*weightP);
+                                if (varValsP[19] == 1.0)hPromptPresel[e]->Fill(*yPredValsP,*weightP);
+                                if (*yPredValsP > xgbCut[e])hPromptIDMVA[e]->Fill(*yPredValsP,*weightP);
+                                if (*yPredValsP > xgbCut2[e])hPromptIDMVA2[e]->Fill(*yPredValsP,*weightP);
+                            }
+                        }
+                    }
+                    while (fReader.Next()) {
+                        if(((e == 0 || e == 2) && abs(varValsF[20]) < 1.4442) || ((e == 1 || e == 3) && abs(varValsF[20]) > 1.556)){
+                            hFakeAll[e]->Fill(*yPredValsF,*weightF);
+                            if (varValsF[19] == 1.0)hFakePresel[e]->Fill(*yPredValsF,*weightF);
+                            if (*yPredValsF > xgbCut[e])hFakeIDMVA[e]->Fill(*yPredValsF,*weightF);
+                            if (*yPredValsF > xgbCut2[e])hFakeIDMVA2[e]->Fill(*yPredValsF,*weightF);
+                        }
                     }
                 }
             }
@@ -214,10 +249,7 @@ void xgbPlotVars(bool etaSplit, bool diphotonCuts){
                 if (e == 4){
                     for (int p = 0; p < 4; p++){
                         if (p != 1){
-//                            hPromptAll[e]->Add(hPromptAll[p],1.0/400.0);
-//                            hPromptPresel[e]->Add(hPromptPresel[p],1.0/400.0);
-//                            hPromptIDMVA[e]->Add(hPromptIDMVA[p],1.0/400.0);
-//                            hPromptIDMVA2[e]->Add(hPromptIDMVA2[p],1.0/400.0);
+//
                             hPromptAll[e]->Add(hPromptAll[p]);
                             hPromptPresel[e]->Add(hPromptPresel[p]);
                             hPromptIDMVA[e]->Add(hPromptIDMVA[p]);
@@ -231,8 +263,8 @@ void xgbPlotVars(bool etaSplit, bool diphotonCuts){
                         }
                     }
                 }
-                TCanvas *can = new TCanvas ("can","can",10,10,1600,900);
-                
+                can->Clear();
+
                 string plotTitle = varNames[i] + " for GGH " + eta[e] + ";"+varNames[i];
                 THStack *hStack = new THStack("hStack",plotTitle.c_str());
                 hStack->SetHistogram(new TH1F("hstot","",nBins[i],limsLow[i],limsHigh[i]));
@@ -352,7 +384,7 @@ void xgbPlotVars(bool etaSplit, bool diphotonCuts){
                 hStack->Add(hFakeIDMVA2[e]);
                 legend->AddEntry(hFakeIDMVA2[e],labelIDMVA2F.c_str(),"pl");
               
-                if(varNames[i] == "hggMass" || varNames[i] == "hggMassCut"){
+                if(e == 4 && (varNames[i] == "hggMass" || varNames[i] == "hggMassCut")){
                     hPromptAll[e]->Rebin(10);
                     hPromptPresel[e]->Rebin(10);
                     hPromptIDMVA[e]->Rebin(10);

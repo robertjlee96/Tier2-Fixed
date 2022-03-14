@@ -211,7 +211,7 @@ void etaScatterPlotTMP(bool etaSplit, bool diphotonCuts){
         string leadVarStr = "leadScEta";
         string subVarStr = "subScEta";
         
-        string varStr = leadVarStr + ":" + subVarStr;
+        string varStr = subVarStr + ":" + leadVarStr;
         
         TH2F *h[8];
         TH2F *hSub[8];

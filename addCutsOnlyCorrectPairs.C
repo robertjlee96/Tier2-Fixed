@@ -80,11 +80,8 @@ void addCutsOnlyCorrectPairs(){
     TTreeReaderValue<Float_t> subHadronicOverEm(myReader, "subHadronicOverEm");
     TTreeReaderValue<Float_t> rhoIn(myReader, "rho");
     
-<<<<<<< HEAD
     TFile* fileOut = TFile::Open("NTuples/SinglePhoton_GJet_M95PTM15_0228_Validation.root","RECREATE");
-=======
     TFile* fileOut = TFile::Open("NTuples/SinglePhoton_GJet_M95PTM15_DPT075_OnlyPromptFakePairs_0120_Validation.root","RECREATE");
->>>>>>> 27f7c4344d75d61327757beea580fc85cb3f969b
     string treeNames[4] = {"PromptLead","PromptSub","FakeLead","FakeSub"};
     string treeStrs[2] = {"promptPhotons","fakePhotons"};
     
@@ -207,11 +204,7 @@ void addCutsOnlyCorrectPairs(){
     while (myReader.Next()){
         //ODD FOR TRAINING EVEN FOR VALIDATION
         if(((int)*eventIn)%2 == 0 && ((*leadGenMatchType == 1 && *subGenMatchType != 1)||(*leadGenMatchType != 1 && *subGenMatchType == 1) )  ){
-<<<<<<< HEAD
             if (*hggMassIn > 95.0 && *leadGenMatchType == 1.0 && *leadPt > 17.0 && *leadPt/(*hggMassIn) > 0.15 && *subPt/(*hggMassIn) > 0.15 && *subPt > 17.0){
-=======
-            if (*hggMassIn > 95.0 && *leadGenMatchType == 1.0 && *leadPt > 17.0 && *leadPt/(*hggMassIn) > 0.15 && abs(*leadGenPt-*leadPt)/(*leadPt) < 0.075){
->>>>>>> 27f7c4344d75d61327757beea580fc85cb3f969b
                 hggMassP1 = *hggMassIn;
                 eventP1 = *eventIn;
                 genMatchTypeP1 = *leadGenMatchType;
@@ -248,11 +241,7 @@ void addCutsOnlyCorrectPairs(){
                 passDPreselP1 = passDPresel;
                 treeOutP1->Fill();
             }
-<<<<<<< HEAD
             if (*hggMassIn > 95.0 && *subGenMatchType == 1.0 && *leadPt > 17.0 && *leadPt/(*hggMassIn) > 0.15 && *subPt/(*hggMassIn) > 0.15 && *subPt > 17.0){
-=======
-            if (*hggMassIn > 95.0 && *subGenMatchType == 1.0 && *subPt > 17.0 && *subPt/(*hggMassIn) > 0.15 && abs(*subGenPt-*subPt)/(*subPt) < 0.075){
->>>>>>> 27f7c4344d75d61327757beea580fc85cb3f969b
                 hggMassP2 = *hggMassIn;
                 eventP2 = *eventIn;
                 genMatchTypeP2 = *subGenMatchType;
@@ -290,11 +279,7 @@ void addCutsOnlyCorrectPairs(){
                 passDPreselP2 = passDPresel;
                 treeOutP2->Fill();
             }
-<<<<<<< HEAD
             if (*hggMassIn > 95.0 && *leadGenMatchType != 1.0 && *leadPt > 17.0 && *leadPt/(*hggMassIn) > 0.15 && *subPt/(*hggMassIn) > 0.15 && *subPt > 17.0){
-=======
-            if (*hggMassIn > 95.0 && *leadGenMatchType != 1.0 && *leadPt > 17.0 && *leadPt/(*hggMassIn) > 0.15){
->>>>>>> 27f7c4344d75d61327757beea580fc85cb3f969b
                 hggMassF1 = *hggMassIn;
                 eventF1 = *eventIn;
                 genMatchTypeF1 = *leadGenMatchType;
@@ -331,11 +316,7 @@ void addCutsOnlyCorrectPairs(){
                 passDPreselF1 = passDPresel;
                 treeOutF1->Fill();
             }
-<<<<<<< HEAD
             if (*hggMassIn > 95.0 && *subGenMatchType != 1.0 && *leadPt > 17.0 && *leadPt/(*hggMassIn) > 0.15 && *subPt/(*hggMassIn) > 0.15 && *subPt > 17.0){
-=======
-            if (*hggMassIn > 95.0 && *subGenMatchType != 1.0 && *subPt > 17.0 && *subPt/(*hggMassIn) > 0.15){
->>>>>>> 27f7c4344d75d61327757beea580fc85cb3f969b
                 hggMassF2 = *hggMassIn;
                 eventF2 = *eventIn;
                 genMatchTypeF2 = *subGenMatchType;

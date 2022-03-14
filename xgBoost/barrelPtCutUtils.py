@@ -27,6 +27,8 @@ endcap_vars = list(barrel_vars) + [
 
 ]
 
+extra_vars = ['pt','hggMass','passSPresel','passDPresel','scEtaSecond']
+
 #----------------------------------------------------------------------
 
 #def load_file(input_file, geoSelection = None, ptCuts = None, dptCuts = None):
@@ -50,23 +52,13 @@ def load_file(input_file, geoSelection = None, ptCuts = None):
     # and equal to orig_weights for fake photons
     train_weights = []
 
-    pt_values = []
-    scEta_values = []
-    mass_values = []
-<<<<<<< HEAD
-    passS_values = []
-    passD_values = []
-    secondEta_values = []
+    var_values_sig = []
+    var_values_bkg = []
+    var_names = []
 
     is_first_var = True
 
-    for varname in barrel_vars + ['pt'] + ['hggMass'] + ['passSPresel'] + ['passDPresel'] + ['scEtaSecond']:
-=======
-
-    is_first_var = True
-
-    for varname in barrel_vars + ['pt'] + ['hggMass']:
->>>>>>> 27f7c4344d75d61327757beea580fc85cb3f969b
+    for varname in endcap_vars + extra_vars:
 
         this_values = []
 
@@ -97,26 +89,16 @@ def load_file(input_file, geoSelection = None, ptCuts = None):
               
             else:
                 indices = np.ones(len(tree.array(varname)), dtype = 'bool')
+                
+            if label == 1:
+                var_values_sig.append(tree.array(varname)[indices])
+            if label == 0:
+                var_values_bkg.append(tree.array(varname)[indices])
+            
+            if is_first_proc:
+                var_names.append(varname)
 
-            if varname == 'pt':
-                pt_values.append(tree.array(varname)[indices])
-            elif varname == 'scEta':
-                scEta_values.append(tree.array(varname)[indices])
-                this_values.append(tree.array(varname)[indices])
-                if is_first_proc:
-                    input_var_names.append(varname)
-            elif varname == 'hggMass':
-                mass_values.append(tree.array(varname)[indices])
-<<<<<<< HEAD
-            elif varname == 'passSPresel':
-                passS_values.append(tree.array(varname)[indices])
-            elif varname == 'passDPresel':
-                passD_values.append(tree.array(varname)[indices])
-            elif varname == 'scEtaSecond':
-                secondEta_values.append(tree.array(varname)[indices])
-=======
->>>>>>> 27f7c4344d75d61327757beea580fc85cb3f969b
-            else:
+            if varname in barrel_vars:
                 # BDT input variable
                 this_values.append(tree.array(varname)[indices])
                 if is_first_proc:
@@ -151,19 +133,12 @@ def load_file(input_file, geoSelection = None, ptCuts = None):
 
 
     input_values = np.vstack(input_values).T
-    pt_values = np.hstack(pt_values)
-    scEta_values = np.hstack(scEta_values)
-    mass_values = np.hstack(mass_values)
-<<<<<<< HEAD
-    passS_values = np.hstack(passS_values)
-    passD_values = np.hstack(passD_values)
-    secondEta_values = np.hstack(secondEta_values)
+    var_values_sig = np.vstack(var_values_sig).T
+    var_values_bkg = np.vstack(var_values_bkg).T
+    var_names = np.hstack(var_names)
 
-    return input_values, target_values, orig_weights, train_weights, pt_values, scEta_values, secondEta_values, mass_values, passS_values, passD_values, input_var_names
-=======
 
-    return input_values, target_values, orig_weights, train_weights, pt_values, scEta_values, mass_values, input_var_names
->>>>>>> 27f7c4344d75d61327757beea580fc85cb3f969b
+    return input_values, target_values, orig_weights, train_weights, input_var_names, var_values_sig, var_values_bkg, var_names
 
 #def saveScores(inputFile, outputFileName, xgbScores, geoSelectionLead = None, geoSelectionSub = None, geoSelectionBkg = None):
 def saveScores(inputFile, inputFileName, outputFileName, xgbScores, geoSelection = None, ptCuts = None):
