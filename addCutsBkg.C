@@ -203,7 +203,7 @@ void addCutsBkg(){
         
     while (myReader.Next()){
         //ODD FOR TRAINING EVEN FOR VALIDATION
-        if(*leadGenMatchType == 1 && *subGenMatchType == 1)){
+        if(*leadGenMatchType == 1 && *subGenMatchType == 1){
             if (*hggMassIn > 95.0 && *leadGenMatchType == 1.0 && *leadPt > 17.0 && *leadPt/(*hggMassIn) > 0.15 && *subPt/(*hggMassIn) > 0.15 && *subPt > 17.0){
                 hggMassP1 = *hggMassIn;
                 eventP1 = *eventIn;
